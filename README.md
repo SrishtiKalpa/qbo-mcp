@@ -11,28 +11,16 @@ Open-source MCP server that connects AI assistants (Claude, Cursor, Windsurf, et
 
 `qbo-mcp` implements the [Model Context Protocol](https://modelcontextprotocol.io) to give AI assistants direct, safe access to your QuickBooks Online data. All write operations go through a draft-and-confirm workflow — the AI proposes changes, you approve them.
 
-## Quick Start — Docker (30 seconds)
-
-```yaml
-# docker-compose.yml
-services:
-  qbo-mcp:
-    image: srishtikalpa/qbo-mcp:latest
-    ports: ["8000:8000"]
-    environment:
-      QBO_CLIENT_ID: your_client_id
-      QBO_CLIENT_SECRET: your_client_secret
-      QBO_ENVIRONMENT: sandbox
-```
+## Quick Start — Docker
 
 ```bash
 # 1. Clone
-git clone https://github.com/yourusername/qbo-mcp && cd qbo-mcp
+git clone https://github.com/SrishtiKalpa/accouting-mcp qbo-mcp && cd qbo-mcp
 
 # 2. Configure
 cp .env.example .env  # Fill in QBO_CLIENT_ID, QBO_CLIENT_SECRET
 
-# 3. Start
+# 3. Build and start
 docker compose up
 
 # 4. Connect company (in Claude)
@@ -52,7 +40,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
   "mcpServers": {
     "quickbooks": {
       "command": "uvx",
-      "args": ["qbo-mcp"],
+      "args": ["--from", "git+https://github.com/SrishtiKalpa/accouting-mcp", "qbo-mcp"],
       "env": {
         "MCP_TRANSPORT": "stdio",
         "QBO_CLIENT_ID": "your_client_id",
@@ -64,7 +52,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 }
 ```
 
-Or run directly: `uvx qbo-mcp`
+Or run directly: `uvx --from git+https://github.com/SrishtiKalpa/accouting-mcp qbo-mcp`
 
 ## Connecting your first company
 
