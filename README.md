@@ -1,6 +1,6 @@
 # qbo-mcp
 
-[![CI](https://github.com/SrishtiKalpa/accouting-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/SrishtiKalpa/accouting-mcp/actions/workflows/ci.yml)
+[![CI](https://github.com/SrishtiKalpa/qbo-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/SrishtiKalpa/qbo-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/qbo-mcp)](https://pypi.org/project/qbo-mcp/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/srishtikalpa/qbo-mcp)](https://hub.docker.com/r/srishtikalpa/qbo-mcp)
@@ -15,7 +15,7 @@ Open-source MCP server that connects AI assistants (Claude, Cursor, Windsurf, et
 
 ```bash
 # 1. Clone
-git clone https://github.com/SrishtiKalpa/accouting-mcp qbo-mcp && cd qbo-mcp
+git clone https://github.com/SrishtiKalpa/qbo-mcp && cd qbo-mcp
 
 # 2. Configure
 cp .env.example .env  # Fill in QBO_CLIENT_ID, QBO_CLIENT_SECRET
@@ -40,7 +40,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
   "mcpServers": {
     "quickbooks": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/SrishtiKalpa/accouting-mcp", "qbo-mcp"],
+      "args": ["--from", "git+https://github.com/SrishtiKalpa/qbo-mcp", "qbo-mcp"],
       "env": {
         "MCP_TRANSPORT": "stdio",
         "QBO_CLIENT_ID": "your_client_id",
@@ -52,7 +52,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 }
 ```
 
-Or run directly: `uvx --from git+https://github.com/SrishtiKalpa/accouting-mcp qbo-mcp`
+Or run directly: `uvx --from git+https://github.com/SrishtiKalpa/qbo-mcp qbo-mcp`
 
 ## Connecting your first company
 
