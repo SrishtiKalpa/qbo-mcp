@@ -102,7 +102,7 @@ Highlights:
 ## Contributing
 
 ```bash
-git clone https://github.com/yourusername/qbo-mcp
+git clone https://github.com/SrishtiKalpa/qbo-mcp
 cd qbo-mcp
 uv sync --extra dev
 cp .env.example .env
